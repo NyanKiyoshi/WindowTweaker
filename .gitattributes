@@ -1,0 +1,9 @@
+# force LF EOL
+* text=auto eol=lf
+
+# .NET generated files
+*.csproj linguist-generated
+*.sln linguist-generated
+
+# Doxygen
+Doxyfile

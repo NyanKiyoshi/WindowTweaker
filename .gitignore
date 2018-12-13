@@ -1,0 +1,9 @@
+.*/
+latex/
+out/
+bin/
+obj/
+docs-build/
+*.exe
+*.zip
+*.tmp
