@@ -17,7 +17,10 @@ namespace WindowTweaker {
         public const uint TOPMOST_FLAGS = SWP_NOMOVE | SWP_NOSIZE;
 
         public const int GWL_EXSTYLE = -20;
+        public const int WS_EX_DLGMODALFRAME = 0x00000001;
+        public const int WS_EX_CLIENTEDGE = 0x00000200;
         public const int WS_EX_LAYERED = 0x80000;
+        public const int WS_EX_STATICEDGE = 0x00020000;
         public const int LWA_ALPHA = 0x2;
         public const int LWA_COLORKEY = 0x1;
 

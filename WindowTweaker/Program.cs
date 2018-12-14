@@ -29,11 +29,15 @@ namespace WindowTweaker {
         }
 
         static void SetWindowOpacity(IntPtr targetHWnd) {
-            var WindowLongPtr = (uint) User32.GetWindowLongPtr(
-                targetHWnd, User32.GWL_EXSTYLE) ^ User32.WS_EX_LAYERED;
+            var windowExStyle = (int) User32.GetWindowLongPtr(
+                targetHWnd, User32.GWL_EXSTYLE);
+
+            if ((windowExStyle & User32.WS_EX_LAYERED) != User32.WS_EX_LAYERED) {
+                windowExStyle ^= User32.WS_EX_LAYERED;
+            }
 
             User32.SetWindowLong(
-                targetHWnd, User32.GWL_EXSTYLE, (IntPtr)WindowLongPtr);
+                targetHWnd, User32.GWL_EXSTYLE, (IntPtr)windowExStyle);
 
             KernelError.ShowAndExitIfError(
                 User32.SetLayeredWindowAttributes(targetHWnd, 0, WantedOpacity, User32.LWA_ALPHA));

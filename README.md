@@ -9,5 +9,3 @@ Injects a given opacity and other modifications through the WIN32 API to a grabb
 ## Resources
 - [Pinvoke.net](http://pinvoke.net/) for Win32 APIs.
 
-## Known Issues
-- Setting the opacity of a transparent window does not work on the first attempt (requires two attempts).
